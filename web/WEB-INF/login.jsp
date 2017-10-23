@@ -6,20 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib tagdir="/WEB-INF/tags" prefix="sait" %>
 <c:import url="/WEB-INF/header.html" />
 
-        <h1>Login</h1>
-        
-        <form method="post" action="Login">
-            Username: <input type="text" name="user" value=${returningUser}><br><br>
-            Password: <input type="text" name="password"><br><br>
-            <input type="submit" value="Login"><br><br>
-            <input type="checkbox" name ="rememberMe" value=${remberMe}> Remember Me
-        </form><br>
-            
-        ${fieldError}
-        ${loginError}
-        ${loggedOut}
+    <sait:debug>
+            Remote Host: ${pageContext.request.remoteHost}<br />
+            Session ID: ${pageContext.session.id}
+    </sait:debug>
+       
+        <sait:login></sait:login>
             
         
 <c:import url="/WEB-INF/footer.html" />
